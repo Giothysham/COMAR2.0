@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="63" Path="D:/School/CA/Taak 4/COMAR-/RISC-V/RISC-V.xpr">
+<Project Product="Vivado" Version="7" Minor="63" Path="D:/School/CA/Taak 4/COMAR2.0/COMAR/RISC-V/RISC-V.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="7cf2c4c48ddd41a4bb41a66266d73465"/>
