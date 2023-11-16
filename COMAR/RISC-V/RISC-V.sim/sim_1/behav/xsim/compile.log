@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/School/CA/Taak 4/base/ALU_RV32.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU_RV32'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/School/CA/Taak 4/base/testbenches/ALU_RV32_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ALU_RV32_tb'
