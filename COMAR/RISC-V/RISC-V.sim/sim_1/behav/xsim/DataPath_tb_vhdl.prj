@@ -1,0 +1,19 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../base/ALU_RV32.vhd" \
+"../../../../../../base/Branch_Control.vhd" \
+"../../../../../../base/Control.vhd" \
+"../../../../../../base/DataPath.vhd" \
+"../../../../../../base/Data_Mem.vhd" \
+"../../../../../../mul/FullAdder.vhd" \
+"../../../../../../base/Immediate_Generator.vhd" \
+"../../../../../../mul/instruction_mem.vhd" \
+"../../../../../../base/Mux.vhd" \
+"../../../../../../base/Mux_ToRegFile.vhd" \
+"../../../../../../base/PC.vhd" \
+"../../../../../../base/Reg_File.vhd" \
+"../../../../../../mul/multiplier.vhd" \
+"../../../../../../base/testbenches/DataPath_tb.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../../base/ALU_RV32.vhd" \
-"../../../../../../base/testbenches/ALU_RV32_tb.vhd" \
-
-# Do not sort compile order
-nosort

@@ -1,14 +1,14 @@
 #-----------------------------------------------------------
-# Vivado v2023.1 (64-bit)
-# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
-# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
-# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Thu Nov  9 09:20:11 2023
-# Process ID: 14784
-# Current directory: D:/School/CA/Taak 4/COMAR-/RISC-V/RISC-V.runs/synth_1
-# Command line: vivado.exe -log DataPath.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source DataPath.tcl
-# Log file: D:/School/CA/Taak 4/COMAR-/RISC-V/RISC-V.runs/synth_1/DataPath.vds
-# Journal file: D:/School/CA/Taak 4/COMAR-/RISC-V/RISC-V.runs/synth_1\vivado.jou
-# Running On: edmond, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 17041 MB
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue Nov 21 13:45:49 2023
+# Process ID: 6804
+# Current directory: C:/Users/bjorn/COMAR2.0/COMAR/RISC-V/RISC-V.runs/synth_1
+# Command line: vivado.exe -log DataPath_tb.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source DataPath_tb.tcl
+# Log file: C:/Users/bjorn/COMAR2.0/COMAR/RISC-V/RISC-V.runs/synth_1/DataPath_tb.vds
+# Journal file: C:/Users/bjorn/COMAR2.0/COMAR/RISC-V/RISC-V.runs/synth_1\vivado.jou
+# Running On: DESKTOP-1LNG95U, OS: Windows, CPU Frequency: 2419 MHz, CPU Physical cores: 4, Host memory: 16844 MB
 #-----------------------------------------------------------
-source DataPath.tcl -notrace
+source DataPath_tb.tcl -notrace

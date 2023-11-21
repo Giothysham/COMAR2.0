@@ -24,3 +24,149 @@ ERROR: [Common 17-345] A valid license was not found for feature 'Synthesis' and
 which features and devices are licensed for your system.
 Resolution: Check the status of your licenses in the Vivado License Manager. For debug help search Xilinx Support for "Licensing FAQ". If you are using a license server, verify that the license server is up and running a version of the xilinx daemon that is compatible with the version of Xilinx software that you are using. Note: Vivado 2021.1 and later versions require upgrading your license server tools to the Flex 11.17.2.0 versions. Please confirm with your license admin that the correct version of the license server tools are installed.
 INFO: [Common 17-206] Exiting Vivado at Thu Nov  9 09:20:31 2023...
+
+*** Running vivado
+    with args -log DataPath_tb.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source DataPath_tb.tcl
+
+
+ECHO is off.
+ECHO is off.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source DataPath_tb.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 452.207 ; gain = 184.078
+Command: synth_design -top DataPath_tb -part xc7z010iclg225-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010i'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010i'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 23496
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 898.551 ; gain = 443.391
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'DataPath_tb' [C:/Users/bjorn/COMAR2.0/base/testbenches/DataPath_tb.vhd:12]
+INFO: [Synth 8-638] synthesizing module 'DataPath' [C:/Users/bjorn/COMAR2.0/base/DataPath.vhd:14]
+INFO: [Synth 8-3491] module 'multiplier' declared at 'C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:6' bound to instance 'MULT' of component 'Multiplier' [C:/Users/bjorn/COMAR2.0/base/DataPath.vhd:166]
+INFO: [Synth 8-638] synthesizing module 'multiplier' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:15]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-638] synthesizing module 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'FullAdder' (0#1) [C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:14]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Synth 8-3491] module 'FullAdder' declared at 'C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd:4' bound to instance 'FullAdd' of component 'FullAdder' [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:41]
+INFO: [Common 17-14] Message 'Synth 8-3491' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-256] done synthesizing module 'multiplier' (0#1) [C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd:15]
+ERROR: [Synth 8-549] port width mismatch for port 'product': port width = 64, actual width = 32 [C:/Users/bjorn/COMAR2.0/base/DataPath.vhd:105]
+ERROR: [Synth 8-285] failed synthesizing module 'DataPath' [C:/Users/bjorn/COMAR2.0/base/DataPath.vhd:14]
+ERROR: [Synth 8-285] failed synthesizing module 'DataPath_tb' [C:/Users/bjorn/COMAR2.0/base/testbenches/DataPath_tb.vhd:12]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1231.090 ; gain = 775.930
+---------------------------------------------------------------------------------
+synthesize failed
+INFO: [Common 17-83] Releasing license: Synthesis
+112 Infos, 0 Warnings, 0 Critical Warnings and 4 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 21 13:46:10 2023...

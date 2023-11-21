@@ -1,6 +1,19 @@
 0.7
 2020.2
-May  7 2023
-15:24:31
-D:/School/CA/Taak 4/base/ALU_RV32.vhd,1669281190,vhdl,D:/School/CA/Taak 4/base/testbenches/ALU_RV32_tb.vhd,,,alu_rv32,,,,,,,,
-D:/School/CA/Taak 4/base/testbenches/ALU_RV32_tb.vhd,1669281190,vhdl,,,,alu_rv32_tb;alu_rv32_tb_arch_alu_rv32_cfg,,,,,,,,
+Oct 13 2023
+20:47:58
+C:/Users/bjorn/COMAR2.0/base/ALU_RV32.vhd,1669281190,vhdl,,,,alu_rv32,,,,,,,,
+C:/Users/bjorn/COMAR2.0/base/Branch_Control.vhd,1669281190,vhdl,,,,branch_control,,,,,,,,
+C:/Users/bjorn/COMAR2.0/base/Control.vhd,1669281190,vhdl,,,,control,,,,,,,,
+C:/Users/bjorn/COMAR2.0/base/DataPath.vhd,1700572847,vhdl,C:/Users/bjorn/COMAR2.0/base/testbenches/DataPath_tb.vhd,,,datapath,,,,,,,,
+C:/Users/bjorn/COMAR2.0/base/Data_Mem.vhd,1669281190,vhdl,,,,data_mem,,,,,,,,
+C:/Users/bjorn/COMAR2.0/base/Immediate_Generator.vhd,1669281190,vhdl,,,,immediate_generator,,,,,,,,
+C:/Users/bjorn/COMAR2.0/base/Mux.vhd,1669281190,vhdl,,,,mux,,,,,,,,
+C:/Users/bjorn/COMAR2.0/base/Mux_ToRegFile.vhd,1669281190,vhdl,,,,mux_toregfile,,,,,,,,
+C:/Users/bjorn/COMAR2.0/base/PC.vhd,1669281190,vhdl,,,,pc,,,,,,,,
+C:/Users/bjorn/COMAR2.0/base/Reg_File.vhd,1669281190,vhdl,,,,reg_file,,,,,,,,
+C:/Users/bjorn/COMAR2.0/base/testbenches/DataPath_tb.vhd,1669281190,vhdl,,,,datapath_tb;datapath_tb_arch_datapath_cfg,,,,,,,,
+C:/Users/bjorn/COMAR2.0/base/testbenches/Instruction_Mem_tb.vhd,1669281190,vhdl,,,,instruction_mem_tb;instruction_mem_tb_arch_instruction_mem_cfg,,,,,,,,
+C:/Users/bjorn/COMAR2.0/mul/FullAdder.vhd,1669281190,vhdl,,,,fulladder,,,,,,,,
+C:/Users/bjorn/COMAR2.0/mul/instruction_mem.vhd,1669281190,vhdl,,,,instruction_mem,,,,,,,,
+C:/Users/bjorn/COMAR2.0/mul/multiplier.vhd,1669281190,vhdl,,,,multiplier,,,,,,,,

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7vx485tffg1157-1" LaunchTime="1699518003">
-  <File Type="PA-TCL" Name="DataPath.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="DataPath_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="DataPath_reports.tcl"/>
-  <File Type="RDS-RDS" Name="DataPath.vds"/>
-  <File Type="RDS-UTIL" Name="DataPath_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="DataPath_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="DataPath.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="DataPath_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="DataPath_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z010iclg225-1L" LaunchTime="1700570741">
+  <File Type="PA-TCL" Name="DataPath_tb.tcl"/>
+  <File Type="REPORTS-TCL" Name="DataPath_tb_reports.tcl"/>
+  <File Type="RDS-RDS" Name="DataPath_tb.vds"/>
+  <File Type="RDS-UTIL" Name="DataPath_tb_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="DataPath_tb_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="DataPath_tb.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../base/ALU_RV32.vhd">
@@ -29,7 +26,19 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../../base/DataPath.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../../base/Data_Mem.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../mul/FullAdder.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -41,7 +50,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../base/Instruction_Mem.vhd">
+    <File Path="$PPRDIR/../../mul/instruction_mem.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -71,13 +80,19 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../base/DataPath.vhd">
+    <File Path="$PPRDIR/../../mul/multiplier.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../base/testbenches/DataPath_tb.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../base/Instruction_Mem.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -154,25 +169,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/bd/design_2/design_2.bd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="DataPath"/>
+      <Option Name="TopModule" Val="DataPath_tb"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">

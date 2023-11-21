@@ -14,7 +14,9 @@ entity Control is
         ALUOp       : out std_logic_vector(2 downto 0);
         StoreSel    : out std_logic;
         ALUSrc      : out std_logic;
-        WriteReg    : out std_logic
+        WriteReg    : out std_logic;
+        MUL         : out std_logic;
+        halfselect  : out std_logic
     );
 end entity Control;
 
@@ -37,6 +39,8 @@ begin
                                 ALUSrc      <= '1';                                
                                 ALUOp       <= "100";
                                 WriteReg    <= '1';
+                                MUL         <= '0';
+                                halfselect  <= '0';
                             when "0100000" =>               --SUB
                                 jump        <= '0';
                                 Branch      <= "000";
@@ -45,7 +49,20 @@ begin
                                 StoreSel    <= '0';
                                 ALUSrc      <= '1';
                                 ALUOp       <= "101";
-                                WriteReg    <= '1';                            
+                                WriteReg    <= '1';
+                                MUL         <= '0';
+                                halfselect  <= '0';
+                             when "0000001" =>               --MUL
+                                jump        <= '0';
+                                Branch      <= "000";
+                                ToRegister  <= "000";
+                                MemWrite    <= '0';
+                                StoreSel    <= '0';
+                                ALUSrc      <= '1';                                
+                                ALUOp       <= "100";
+                                WriteReg    <= '1'; 
+                                MUL         <= '1';
+                                halfselect  <= '0';                           
                             when others =>                  --not included instructions
                                 jump        <= '0';
                                 Branch      <= "000";
@@ -55,6 +72,8 @@ begin
                                 ALUSrc      <= '0';
                                 ALUOp       <= "000";
                                 WriteReg    <= '0'; 
+                                MUL         <= '0';
+                                halfselect  <= '0';
                         end case;
                     when "001" =>                           --SLL
                         jump        <= '0';
@@ -65,6 +84,14 @@ begin
                         ALUSrc      <= '1';
                         ALUOp       <= "110";
                         WriteReg    <= '1';
+                       case funct7 is
+                            when "0000001" =>
+                                MUL         <= '1';
+                                halfselect  <= '1';
+                             when others =>
+                                MUL         <= '1';
+                                halfselect  <= '1';
+                             end case;
                     when "010" =>                           --SLT
                         jump        <= '0';
                         Branch      <= "000";
@@ -74,6 +101,8 @@ begin
                         ALUSrc      <= '1';
                         ALUOp       <= "011";
                         WriteReg    <= '1';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when "100" =>                           --XOR
                         jump        <= '0';
                         Branch      <= "000";
@@ -83,6 +112,8 @@ begin
                         ALUSrc      <= '1';
                         ALUOp       <= "010";
                         WriteReg    <= '1';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when "101"  =>                          --SRL
                         jump        <= '0';
                         Branch      <= "000";
@@ -92,6 +123,8 @@ begin
                         ALUSrc      <= '1';
                         ALUOp       <= "111";
                         WriteReg    <= '1';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when "110"  =>                          --OR
                         jump        <= '0';
                         Branch      <= "000";
@@ -101,6 +134,8 @@ begin
                         ALUSrc      <= '1';
                         ALUOp       <= "010";
                         WriteReg    <= '1';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when "111"  =>                          --AND
                         jump        <= '0';
                         Branch      <= "000";
@@ -110,6 +145,9 @@ begin
                         ALUSrc      <= '1';
                         ALUOp       <= "000";
                         WriteReg    <= '1';
+                        MUL         <= '0';
+                        halfselect  <= '0';
+                    
                     when others =>
                         jump        <= '0';
                         Branch      <= "000";
@@ -119,6 +157,8 @@ begin
                         ALUSrc      <= '0';
                         ALUOp       <= "000";
                         WriteReg    <= '0';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                 end case;
             when "0010011" =>                       --I-type immediate arithm
                 case funct3 is
@@ -131,6 +171,8 @@ begin
                         ALUSrc      <= '0';
                         ALUOp       <= "100";
                         WriteReg    <= '1';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when "111" =>                   --ANDI
                         jump        <= '0';
                         Branch      <= "000";
@@ -140,6 +182,8 @@ begin
                         ALUSrc      <= '0';
                         ALUOp       <= "000";
                         WriteReg    <= '1';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when "100" =>                   --XORI
                         jump        <= '0';
                         Branch      <= "000";
@@ -149,6 +193,8 @@ begin
                         ALUSrc      <= '0';
                         ALUOp       <= "010";
                         WriteReg    <= '1';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when "110" =>                   --ORI
                         jump        <= '0';
                         Branch      <= "000";
@@ -158,6 +204,8 @@ begin
                         ALUSrc      <= '0';
                         ALUOp       <= "100";
                         WriteReg    <= '1';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when others =>
                         jump        <= '0';
                         Branch      <= "000";
@@ -166,7 +214,9 @@ begin
                         StoreSel    <= '0';
                         ALUSrc      <= '0';
                         ALUOp       <= "000";
-                        WriteReg    <= '0';                                      
+                        WriteReg    <= '0';
+                        MUL         <= '0';
+                        halfselect  <= '0';                                      
                 end case;
                 when "0000011" =>                       --I-type LOADS
                 case funct3 is
@@ -179,6 +229,8 @@ begin
                         ALUSrc      <= '0';
                         ALUOp       <= "100";
                         WriteReg    <= '1';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when "010" =>                   --LW
                         jump        <= '0';
                         Branch      <= "000";
@@ -188,6 +240,8 @@ begin
                         ALUSrc      <= '0';
                         ALUOp       <= "100";
                         WriteReg    <= '1';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when others =>
                         jump        <= '0';
                         Branch      <= "000";
@@ -196,7 +250,9 @@ begin
                         StoreSel    <= '0';
                         ALUSrc      <= '0';
                         ALUOp       <= "000";
-                        WriteReg    <= '0';                                      
+                        WriteReg    <= '0';  
+                        MUL         <= '0';
+                        halfselect  <= '0';                                    
                 end case;
                 when "0100011" =>                       --Stores
                 case funct3 is
@@ -209,6 +265,8 @@ begin
                         ALUSrc      <= '0';
                         ALUOp       <= "100";
                         WriteReg    <= '0';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when "010" =>                   --SW
                         jump        <= '0';
                         Branch      <= "000";
@@ -218,6 +276,8 @@ begin
                         ALUSrc      <= '0';
                         ALUOp       <= "100";
                         WriteReg    <= '0';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when others =>
                         jump        <= '0';
                         Branch      <= "000";
@@ -226,7 +286,9 @@ begin
                         StoreSel    <= '0';
                         ALUSrc      <= '0';
                         ALUOp       <= "000";
-                        WriteReg    <= '0';                                      
+                        WriteReg    <= '0';
+                        MUL         <= '0';
+                        halfselect  <= '0';                                     
                 end case;
                 when "1100011" =>                       --Branches
                 case funct3 is
@@ -239,6 +301,8 @@ begin
                         ALUSrc      <= '1';
                         ALUOp       <= "101";
                         WriteReg    <= '0';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when "001" =>                   --BNQ
                         jump        <= '0';
                         Branch      <= "010";
@@ -248,6 +312,8 @@ begin
                         ALUSrc      <= '1';
                         ALUOp       <= "101";
                         WriteReg    <= '0';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when "100" =>                  --BLT
                         jump        <= '0';
                         Branch      <= "011";
@@ -257,6 +323,8 @@ begin
                         ALUSrc      <= '1';
                         ALUOp       <= "101";
                         WriteReg    <= '0';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when "101" =>                  --BGT
                         jump        <= '0';
                         Branch      <= "100";
@@ -266,6 +334,8 @@ begin
                         ALUSrc      <= '1';
                         ALUOp       <= "101";
                         WriteReg    <= '0';
+                        MUL         <= '0';
+                        halfselect  <= '0';
                     when others =>
                         jump        <= '0';
                         Branch      <= "000";
@@ -274,7 +344,9 @@ begin
                         StoreSel    <= '0';
                         ALUSrc      <= '0';
                         ALUOp       <= "000";
-                        WriteReg    <= '0';                                     
+                        WriteReg    <= '0';  
+                        MUL         <= '0';
+                        halfselect  <= '0';                                   
                 end case;
                 when "1100111" =>                  --JALR
                     jump        <= '1';
@@ -285,6 +357,8 @@ begin
                     ALUSrc      <= '1';
                     ALUOp       <= "101";
                     WriteReg    <= '1';
+                    MUL         <= '0';
+                    halfselect  <= '0';
                 when "1101111" =>                  --JAL
                     jump        <= '0';
                     Branch      <= "110";
@@ -294,6 +368,8 @@ begin
                     ALUSrc      <= '1';
                     ALUOp       <= "101";
                     WriteReg    <= '0';
+                    MUL         <= '0';
+                    halfselect  <= '0';
                 when others =>                  
                     jump        <= '0';
                     Branch      <= "000";
@@ -303,6 +379,8 @@ begin
                     ALUSrc      <= '0';
                     ALUOp       <= "000";
                     WriteReg    <= '0';
+                    MUL         <= '0';
+                    halfselect  <= '0';
         end case;    
     end process;
 end arch_Control ; -- arch_Control

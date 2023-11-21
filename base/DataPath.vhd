@@ -135,7 +135,9 @@ architecture arch_DataPath of DataPath is
             ALUOp       : out std_logic_vector(2 downto 0);
             StoreSel    : out std_logic;
             ALUSrc      : out std_logic;
-            WriteReg    : out std_logic
+            WriteReg    : out std_logic;
+            MUL         : out std_logic;
+            halfselect  : out std_logic
         );
     end component;
 
@@ -148,11 +150,12 @@ architecture arch_DataPath of DataPath is
     signal result, dataIn       : std_logic_vector(31 downto 0);    --alu result and data in to memory
     signal immediate            : std_logic_vector(31 downto 0);    --immediate generated
     signal dataOut              : std_logic_vector(31 downto 0);    --data from memory
-    signal dataOut2             : std_logic_vector(31 downto 0);    --data from memory
+    signal dataOut2             : std_logic_vector(31 downto 0);    
+    signal dataOutMul             : std_logic_vector(31 downto 0);    
     signal jump, memWrite       : std_logic;
     signal StoreSel, ALUSrc     : std_logic;
     signal writeReg, PCSrc      : std_logic;
-    signal MUL                  : std_logic;
+    signal MUL, halfselect      : std_logic;
     signal toRegister, Branch, ALUOp : std_logic_vector(3 downto 0);
     signal dataForReg           : std_logic_vector(31 downto 0);    --data to be written in register File
     signal op2                  : std_logic_vector(31 downto 0);    --operator for ALU(output from mux)
@@ -160,10 +163,10 @@ architecture arch_DataPath of DataPath is
     signal regData2Anded        : std_logic_vector(31 downto 0);
     signal newAddress           : std_logic_vector(31 downto 0);
     signal shifted              : std_logic_vector(31 downto 0);
-    signal product              : std_logic_vector(31 downto 0);
+    signal product              : std_logic_vector(63 downto 0);
 begin
     
-    MULT: Multiplier port map(operator1 => regData1, operator2 => op2, product =>result);
+    MULT: Multiplier port map(operator1 => regData1, operator2 => op2, product => product);
     
     PCount: PC port map (clk => clk, rst => rst, PCIn => PCIn, PCOut => PCOut);
 
@@ -189,13 +192,15 @@ begin
 
     Ctrl: Control port map (opcode => instruction(6 downto 0), funct3 => instruction(14 downto 12), funct7 => instruction(31 downto 25),
     jump => jump, MemWrite => memWrite, Branch => Branch, ALUOp => ALUOp, StoreSel => StoreSel, ALUSrc => ALUSrc, 
-    WriteReg => WriteReg, ToRegister => toRegister);
+    WriteReg => WriteReg, ToRegister => toRegister, MUL => MUL, halfselect => halfselect);
 
     Mux2: Mux port map (muxIn0 => immediate, muxIn1 => result, selector => jump, muxOut => offset);
 
     Mux3: Mux port map (muxIn0 => PCOutPlus, muxIn1 => newAddress, selector => PCSrc, muxOut => PCIn);
     
-    Mux4: Mux port map (muxIn0 => product, muxIn1 => DataOut, selector => MUL, muxOut => DataOut2);
+    Mux4: Mux port map (muxIn0 => DataOut, muxIn1 => DataOutMul , selector => MUL, muxOut => DataOut2);
+    
+    Mux5: Mux port map (muxIn0 => product (31 downto 0), muxIn1 => product (63 downto 32), selector => halfselect, muxOut => DataOutMul);
     
     Imm: Immediate_Generator port map (instruction => instruction, immediate => immediate);
 
